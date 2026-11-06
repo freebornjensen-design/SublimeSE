@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>SE Симулятор</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="row">
+    <div class="brand">SE&nbsp;<span>сим</span></div>
+    <div id="scriptStatus" class="badge">нет скрипта</div>
+    <div class="sep"></div>
+    <button id="btnRun" title="Пуск / пауза (Пробел)">▶ Пуск</button>
+    <button id="btnStep" title="Один тик (1/60 с)">⏭ 1 тик</button>
+    <button id="btnStep10" title="10 тиков">⏭ 10</button>
+    <button id="btnStep100" title="100 тиков">⏭ 100</button>
+    <label class="lbl">скорость
+      <select id="speed">
+        <option value="0.1">×0.1</option><option value="0.25">×0.25</option><option value="0.5">×0.5</option>
+        <option value="1" selected>×1</option><option value="2">×2</option><option value="5">×5</option><option value="10">×10</option>
+      </select>
+    </label>
+    <div id="clock" class="mono dim"></div>
+    <div class="sep"></div>
+    <input id="arg" placeholder="аргумент" title="Аргумент для Run (Enter)">
+    <button id="btnTerm" title="Запустить Main(argument) как кнопкой «Выполнить» в терминале">Выполнить</button>
+    <button id="btnRecompile" title="Перекомпилировать скрипт">⟳ Компиляция</button>
+    <button id="btnReset" title="Вернуть сетку к сохранённому состоянию и очистить Storage">⟲ Сброс</button>
+  </div>
+  <div class="row">
+    <div id="gridName" class="gridname"></div>
+    <select id="bpSelect" title="Блупринты из %AppData%\SpaceEngineers\Blueprints\local"></select>
+    <button id="btnImport">Импорт блупринта</button>
+    <button id="btnNewGrid" title="Небольшая тестовая сетка">Новая сетка</button>
+    <button id="btnSaveGrid" title="Сохранить текущее состояние как начальное (файл рядом со скриптом)">💾 Сохранить сетку</button>
+    <div class="sep"></div>
+    <select id="addSelect"></select>
+    <button id="btnAdd">+ блок</button>
+    <div class="sep"></div>
+    <input id="filter" placeholder="фильтр по имени/типу">
+    <label class="lbl">группировка
+      <select id="groupBy">
+        <option value="type">по типу</option>
+        <option value="group">по группам</option>
+        <option value="grid">по сеткам</option>
+        <option value="none">без группировки</option>
+      </select>
+    </label>
+  </div>
+</header>
+
+<main>
+  <section id="left">
+    <div class="panel">
+      <h3>Программируемый блок <span id="pbName" class="dim"></span></h3>
+      <div id="error" class="error hidden"></div>
+      <div class="kv"><span>UpdateFrequency</span><b id="freq" class="mono"></b></div>
+      <div class="kv"><span>Последний запуск</span><b id="lastRun" class="mono"></b></div>
+      <div class="sub">Echo</div>
+      <pre id="echo" class="echo"></pre>
+      <div id="diags"></div>
+    </div>
+    <div class="panel grow">
+      <h3>Журнал <button id="btnClearLog" class="mini">очистить</button></h3>
+      <pre id="log" class="log"></pre>
+    </div>
+  </section>
+
+  <section id="center">
+    <details id="screensBox" class="screens-box" open><summary id="screensTitle">Экраны</summary>
+      <div id="screens" class="screens"></div>
+    </details>
+    <div id="blocks"></div>
+  </section>
+
+  <section id="right">
+    <div id="inspector" class="panel"><div class="dim">Кликни по блоку, чтобы увидеть и поправить его состояние.</div></div>
+  </section>
+</main>
+
+<div id="offline" class="offline hidden">Нет связи с SeHelper… переподключаюсь</div>
+<script src="app.js"></script>
+</body>
+</html>

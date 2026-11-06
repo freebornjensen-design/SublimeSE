@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[IEnumerator<bool> ${1:sequence};
+
+IEnumerator<bool> ${2:Run}()
+{
+	${0:// шаг 1}
+	yield return true;   // пауза до следующего тика
+	// шаг 2
+}
+
+void Step${2:Run}()
+{
+	if (${1:sequence} == null) ${1:sequence} = ${2:Run}();
+	if (!${1:sequence}.MoveNext() || !${1:sequence}.Current)
+	{
+		${1:sequence}.Dispose();
+		${1:sequence} = null;
+		Runtime.UpdateFrequency &= ~UpdateFrequency.Once;
+	}
+	else Runtime.UpdateFrequency |= UpdateFrequency.Once;
+}]]></content>
+	<tabTrigger>sestate</tabTrigger>
+	<scope>source.cs</scope>
+	<description>SE: конечный автомат на yield (растянуть работу на несколько тиков)</description>
+</snippet>

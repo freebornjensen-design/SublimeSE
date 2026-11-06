@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[string ${1:Bar}(double ratio, int width = ${2:20})
+{
+	int n = (int)Math.Round(MathHelper.Clamp(ratio, 0, 1) * width);
+	return "[" + new string('|', n) + new string('.', width - n) + "] " + ratio.ToString("P0");
+}]]></content>
+	<tabTrigger>sebar</tabTrigger>
+	<scope>source.cs</scope>
+	<description>SE: текстовая процентная шкала для LCD</description>
+</snippet>

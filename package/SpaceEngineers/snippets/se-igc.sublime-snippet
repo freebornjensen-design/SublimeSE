@@ -1,0 +1,20 @@
+<snippet>
+	<content><![CDATA[IMyBroadcastListener ${1:listener};
+
+// в конструкторе:
+// ${1:listener} = IGC.RegisterBroadcastListener("${2:channel}");
+// ${1:listener}.SetMessageCallback("${2:channel}");
+
+void Read${3:Messages}()
+{
+	while (${1:listener}.HasPendingMessage)
+	{
+		MyIGCMessage msg = ${1:listener}.AcceptMessage();
+		var data = msg.Data as string;
+		$0
+	}
+}]]></content>
+	<tabTrigger>seigc</tabTrigger>
+	<scope>source.cs</scope>
+	<description>SE: приём сообщений IGC</description>
+</snippet>

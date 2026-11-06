@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[${1:surface}.ContentType = ContentType.SCRIPT;
+${1:surface}.Script = "";
+using (var frame = ${1:surface}.DrawFrame())
+{
+	var size = ${1:surface}.SurfaceSize;
+	frame.Add(new MySprite(SpriteType.TEXTURE, "SquareSimple", size / 2, size, new Color(0, 0, 40)));
+	frame.Add(MySprite.CreateText("${2:Привет}", "Debug", Color.White, 1f, TextAlignment.CENTER));
+	$0
+}]]></content>
+	<tabTrigger>sesprite</tabTrigger>
+	<scope>source.cs</scope>
+	<description>SE: рисование спрайтами (DrawFrame)</description>
+</snippet>
