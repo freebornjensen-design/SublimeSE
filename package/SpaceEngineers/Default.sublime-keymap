@@ -1,0 +1,33 @@
+[
+	// Emmet-подобные аббревиатуры: gbt:IMyBatteryBlock + Tab
+	{
+		"keys": ["tab"], "command": "se_expand_abbreviation",
+		"context": [
+			{ "key": "selector", "operand": "source.cs" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^\\s*(gbt|gbn|gbg|upd|lcd|fe|echo|ini|prop|act):.*$" },
+			{ "key": "auto_complete_visible", "operand": false },
+			{ "key": "has_next_field", "operand": false },
+		]
+	},
+	// DocBlockr-подобно: /// над методом разворачивается в <summary>/<param>/<returns>
+	{
+		"keys": ["/"], "command": "se_doc_comment",
+		"context": [
+			{ "key": "selector", "operand": "source.cs" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^\\s*//$" },
+			{ "key": "following_text", "operator": "regex_match", "operand": "^\\s*$" },
+		]
+	},
+	{
+		"keys": ["enter"], "command": "se_doc_newline",
+		"context": [
+			{ "key": "selector", "operand": "source.cs comment" },
+			{ "key": "preceding_text", "operator": "regex_match", "operand": "^\\s*///.*$" },
+			{ "key": "auto_complete_visible", "operand": false },
+		]
+	},
+	// симулятор
+	{ "keys": ["ctrl+alt+s"], "command": "se_open_simulator", "context": [{ "key": "selector", "operand": "source.cs" }] },
+	{ "keys": ["ctrl+alt+r"], "command": "se_run", "context": [{ "key": "selector", "operand": "source.cs" }] },
+	{ "keys": ["ctrl+alt+c"], "command": "se_copy_for_game", "context": [{ "key": "selector", "operand": "source.cs" }] },
+]

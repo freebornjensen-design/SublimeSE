@@ -1,0 +1,39 @@
+[
+	{
+		"id": "tools",
+		"children": [
+			{
+				"caption": "Space Engineers",
+				"children": [
+					{ "caption": "Открыть симулятор", "command": "se_open_simulator" },
+					{ "caption": "Загрузить скрипт в симулятор", "command": "se_load_script" },
+					{ "caption": "Выполнить с аргументом…", "command": "se_run" },
+					{ "caption": "Импорт блупринта…", "command": "se_import_blueprint" },
+					{ "caption": "-" },
+					{ "caption": "Скопировать код для игры", "command": "se_copy_for_game" },
+					{ "caption": "Новый скрипт", "command": "se_new_script" },
+					{ "caption": "Список ошибок", "command": "se_list_errors" },
+					{ "caption": "-" },
+					{ "caption": "Перезапустить SeHelper", "command": "se_restart_helper" },
+				]
+			}
+		]
+	},
+	{
+		"id": "preferences",
+		"children": [
+			{
+				"caption": "Package Settings",
+				"mnemonic": "P",
+				"id": "package-settings",
+				"children": [
+					{
+						"caption": "Space Engineers",
+						"command": "edit_settings",
+						"args": { "base_file": "${packages}/SpaceEngineers/SpaceEngineers.sublime-settings", "default": "{\n\t$0\n}\n" }
+					}
+				]
+			}
+		]
+	}
+]

@@ -1,0 +1,20 @@
+[
+	{ "caption": "SE: Открыть симулятор", "command": "se_open_simulator" },
+	{ "caption": "SE: Загрузить скрипт в симулятор", "command": "se_load_script" },
+	{ "caption": "SE: Выполнить с аргументом…", "command": "se_run" },
+	{ "caption": "SE: Симуляция — пуск", "command": "se_control", "args": { "action": "start" } },
+	{ "caption": "SE: Симуляция — пауза", "command": "se_control", "args": { "action": "pause" } },
+	{ "caption": "SE: Симуляция — шаг (1 тик)", "command": "se_control", "args": { "action": "step", "ticks": 1 } },
+	{ "caption": "SE: Симуляция — сброс", "command": "se_control", "args": { "action": "reset" } },
+	{ "caption": "SE: Импорт блупринта в симулятор…", "command": "se_import_blueprint" },
+	{ "caption": "SE: Скопировать код для игры", "command": "se_copy_for_game" },
+	{ "caption": "SE: Новый скрипт", "command": "se_new_script" },
+	{ "caption": "SE: Список ошибок", "command": "se_list_errors" },
+	{ "caption": "SE: Считать файл скриптом (вкл/выкл)", "command": "se_toggle_script" },
+	{ "caption": "SE: Перезапустить SeHelper", "command": "se_restart_helper" },
+	{
+		"caption": "Preferences: Space Engineers Settings",
+		"command": "edit_settings",
+		"args": { "base_file": "${packages}/SpaceEngineers/SpaceEngineers.sublime-settings", "default": "{\n\t$0\n}\n" }
+	},
+]

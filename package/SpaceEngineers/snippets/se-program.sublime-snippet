@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[public Program()
+{
+	Runtime.UpdateFrequency = UpdateFrequency.${1:Update100};
+	$0
+}
+
+public void Save()
+{
+}
+
+public void Main(string argument, UpdateType updateSource)
+{
+	${2:Echo("ok");}
+}]]></content>
+	<tabTrigger>sepb</tabTrigger>
+	<scope>source.cs</scope>
+	<description>SE: каркас Program / Save / Main</description>
+</snippet>
