@@ -12,7 +12,9 @@
 powershell -ExecutionPolicy Bypass -File D:\Projects\SE\SublimeSE\install.ps1
 ```
 
-Скрипт собирает `SeHelper.exe` и копирует пакет в `%APPDATA%\Sublime Text\Packages\SpaceEngineers`.
+Скрипт собирает `SeHelper.exe` и копирует пакет в `Packages\SpaceEngineers` каждого существующего профиля:
+`%APPDATA%\Sublime Text` и `%APPDATA%\Sublime Text 3`. ST4, обновлённый с ST3, продолжает жить во втором.
+Проверить, какой профиль взял Sublime, можно в консоли (View → Show Console): плагин пишет туда путь к пакету.
 После правок в репозитории запусти его ещё раз. Если игра стоит не там, где по умолчанию: `install.ps1 -Bin64 "E:\Steam\...\Bin64"`
 и `"game_bin64"` в настройках пакета.
 
