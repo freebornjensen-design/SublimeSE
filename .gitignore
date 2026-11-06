@@ -1,0 +1,3 @@
+package/SpaceEngineers/bin/
+__pycache__/
+*.se-grid.json
